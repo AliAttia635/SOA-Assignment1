@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Add necessary head elements -->
+    <title>Student Forms</title>
+</head>
+<body>
+<h2>Student Forms</h2>
+<form action="/store-data" method="post"  th:object="${ListStudent}">
+    <th:block th:each="i : ${#numbers.sequence(1, numForms)}">
+        <label th:text="'Student ' + ${i} + ' ID:'"></label>
+        <input type="number" th:name="'ItemList[' + ${i - 1} + '].id'" th:id="'ItemList[' + ${i - 1} + '].id'" required>
+        <!-- Add other form fields as needed -->
+        <label th:text="'Student ' + ${i} + ' firstname:'"></label>
+        <input type="text" th:name="'ItemList[' + ${i - 1} + '].firstName'" th:id="'ItemList[' + ${i - 1} + '].firstName'" required>
+        <br>
+        <label th:text="'Student ' + ${i} + ' lastname:'"></label>
+        <input type="text" th:name="'ItemList[' + ${i - 1} + '].lastName'" th:id="'ItemList[' + ${i - 1} + '].lastName'" required>
+        <!-- Add other form fields as needed -->
+        <label th:text="'Student ' + ${i} + ' gender:'"></label>
+        <input type="text" th:name="'ItemList[' + ${i - 1} + '].gender'" th:id="'ItemList[' + ${i - 1} + '].gender'" required>
+        <br>
+        <label th:text="'Student ' + ${i} + ' address:'"></label>
+        <input type="text" th:name="'ItemList[' + ${i - 1} + '].address'" th:id="'ItemList[' + ${i - 1} + '].address'" required>
+        <!-- Add other form fields as needed -->
+        <label th:text="'Student ' + ${i} + ' level:'"></label>
+        <input type="text" th:name="'ItemList[' + ${i - 1} + '].level'" th:id="'ItemList[' + ${i - 1} + '].level'" required>
+        <br>
+        <label th:text="'Student ' + ${i} + ' gpa:'"></label>
+        <input type="text" th:name="'ItemList[' + ${i - 1} + '].gpa'" th:id="'ItemList[' + ${i - 1} + '].gpa'" required>
+        <!-- Add other form fields as needed -->
+
+        <br>
+    </th:block>
+<!--    <label for="id">Enter the number of students:</label>-->
+<!--    <input type="number" id="id" name="id" required>-->
+    <button type="submit">Submit</button>
+</form>
+
+<!-- Link to the search-delete page -->
+<a href="/search-delete">Search and Delete</a>
+</body>
+</html>

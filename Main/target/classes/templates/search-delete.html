@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Add necessary head elements -->
+  <title>Search and Delete</title>
+</head>
+<body>
+<h2>Search and Delete</h2>
+
+<form action="/searchById" method="post">
+  <label for="studentId">Enter Student ID to Search:</label>
+  <input type="text" id="studentId" name="studentId" required>
+  <button type="submit">Search</button>
+</form>
+
+<form action="/searchByName" method="post">
+  <label for="studentName">Enter Student First Name to Search:</label>
+  <input type="text" id="studentName" name="studentName" required>
+  <button type="submit">Search</button>
+</form>
+
+<form action="/searchByGpa" method="post">
+  <label for="studentGpa">Enter Student GPA to Search:</label>
+  <input type="text" id="studentGpa" name="studentGpa" required>
+  <button type="submit">Search</button>
+</form>
+
+<form action="/deleteById" method="post">
+  <label for="deleteId">Enter Student ID to Delete:</label>
+  <input type="text" id="deleteId" name="studentId" required>
+  <button type="submit">Delete</button>
+</form>
+</body>
+</html>

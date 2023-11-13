@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Add necessary head elements -->
+    <title>Search Result</title>
+</head>
+<body>
+<h2>Search Result</h2>
+
+<!-- Display search results here -->
+<div th:if="${resultList != null && resultList.size() > 0}">
+    <h3>Search Results:</h3>
+    <ul>
+        <li th:each="result : ${resultList}">
+            <!-- Display relevant student information -->
+            <p th:text="'ID: ' + ${result.id} + ' FirstName: ' + ${result.firstName} + ' Last Name: ' + ${result.lastName} + ' Address:  ' + ${result.address} + ' Gender: ' + ${result.gender} + ' Gpa: ' + ${result.gpa} + ' Level: ' + ${result.level}"></p>
+        </li>
+    </ul>
+</div>
+
+<!-- Display a message if no results found -->
+<div th:if="${resultList == null or resultList.size() == 0}">
+    <p>No results found.</p>
+</div>
+
+<!-- Add navigation or other elements as needed -->
+</body>
+</html>
